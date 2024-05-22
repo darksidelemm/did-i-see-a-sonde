@@ -88,5 +88,5 @@ We should now have a bunch of .json files in `./telemetry/`.
 Next we can convert all the sonde flight paths in the telemetry directory to a kml file (output.kml)
 
 ```
-$ python step4.kml
+$ python step4.py
 ```
