@@ -75,3 +75,18 @@ $ python step2.py
 ```
 
 ## Step 3 - Download full sonde telemetry data
+Now we download all the raw telemetry data.
+
+```
+$ mkdir telemetry
+$ ./step3.sh
+```
+
+We should now have a bunch of .json files in `./telemetry/`.
+
+## Step 4 - Convert to KML
+Next we can convert all the sonde flight paths in the telemetry directory to a kml file (output.kml)
+
+```
+$ python step4.kml
+```
