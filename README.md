@@ -6,6 +6,7 @@ This was written to figure out if the object that Destin (Smarter Every Day) saw
 Some data on Destin's observation:
 - Observation location: 37.43N, 89.6436W, ~161m AMSL
 - Maximum eclipse time: 19:00:15Z, sun at 57.2 degrees elevation, 208 degrees azimuth.
+- Unidentified object was observed at the end of totality, so about this time plus a few minutes.
 - From eclipse start to eclipse end, the sun's elevation moved from 59.5 through 47 degrees, and azimuth from 171 to 235 degrees.
 
 We approach the problem in the following way:
@@ -89,4 +90,18 @@ Next we can convert all the sonde flight paths in the telemetry directory to a k
 
 ```
 $ python step4.py
+```
+
+## Final - Checking Amateur Balloons
+
+Grabbing data from 30 min around totality:
+```
+curl -X 'GET' \
+  'https://api.v2.sondehub.org/amateur/telemetry?duration=30m&datetime=2024-04-08T19%3A05%3A00Z' \
+  -H 'accept: application/json' | gunzip | > amateur.json
+```
+
+.. then process into KML:
+```
+python amateur_to_kml.py
 ```
